@@ -14,7 +14,7 @@ Para completar el seminario con éxito, debes cumplir estos **4 puntos**:
 3.  **[✅ ] Crear Nuevo Endpoint**: Implementa `GET /organizaciones/:id/usuarios` para filtrar usuarios por empresa.
 --> Done, sense dificultats
 4.  **[ ✅] Documentar**: Todo el código nuevo debe estar reflejado en **Swagger** (`/api`).
---> Documentat + EXTRA: Interfaç web SWAGGER
+--> Documentat + Interfaç web SWAGGER
 
 ---
 

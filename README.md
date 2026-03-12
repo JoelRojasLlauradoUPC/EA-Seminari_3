@@ -197,3 +197,18 @@ Para compilar manualmente:
 ```bash
 npx tsc
 ```
+
+
+## Materials Consultats
+- Els disponibles a Atenea.
+- Els publicats pel grup que ha realitzat la presentació.
+
+## Detall d'ús de la IA generativa
+S'ha utilitzat la IA per ajudar a documentar la API d'una manera més eficient. D'altre banda, també s'ha fet servir l'IA generativa per fer una revisió final de l'exercici un cop el codi ja funcionava per tal d'obtenir suggerències sobre aspectes de millora.
+
+D'entre les suggerencies que es van obtenir s'han implementat les següents:
+- Interfície web de swagger per facilitar la interacció amb la API.
+- Inicialitzar la BBDD amb valors random d'organitzacions i usuaris.
+
+## Vídeo amb la DEMO
+https://youtu.be/oKupamu9Rvo
