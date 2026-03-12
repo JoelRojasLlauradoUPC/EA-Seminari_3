@@ -25,9 +25,8 @@ const router = express.Router();
  *         usuarios:
  *           type: array
  *           items:
- *             type: string
- *           description: Array de ObjectIds de usuarios
- *           example: ["65f1c2a1b2c3d4e5f6789012"]
+ *             $ref: '#/components/schemas/Usuario'
+ *           description: Usuarios que pertenecen a la organización
  *     OrganizacionCreateUpdate:
  *       type: object
  *       required:
@@ -82,6 +81,33 @@ router.post('/', ValidateJoi(Schemas.organizacion.create), controller.createOrga
  *         description: No encontrado
  */
 router.get('/:organizacionId', controller.readOrganizacion);
+
+/**
+ * @openapi
+ * /organizaciones/{organizacionId}/usuarios:
+ *   get:
+ *     summary: Lista los usuarios de una organización
+ *     tags: [Organizaciones]
+ *     parameters:
+ *       - in: path
+ *         name: organizacionId
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: ObjectId de la organización
+ *     responses:
+ *       200:
+ *         description: OK
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Usuario'
+ *       404:
+ *         description: No encontrado
+ */
+router.get('/:organizacionId/usuarios', controller.readUsuariosByOrganizacion);
 
 /**
  * @openapi
