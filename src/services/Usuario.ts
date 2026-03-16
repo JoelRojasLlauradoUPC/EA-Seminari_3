@@ -30,4 +30,12 @@ const deleteUsuario = async (usuarioId: string): Promise<IUsuarioModel | null> =
     return await Usuario.findByIdAndDelete(usuarioId);
 };
 
-export default { createUsuario, getUsuario, getAllUsuarios, updateUsuario, deleteUsuario };
+const removeUsuarioOrganizacion = async (usuarioId: string): Promise<IUsuarioModel | null> => {
+    return await Usuario.findByIdAndUpdate(
+        usuarioId,
+        { $set: { organizacion: null } },
+        { new: true, runValidators: false }
+    );
+};
+
+export default { createUsuario, getUsuario, getAllUsuarios, updateUsuario, deleteUsuario, removeUsuarioOrganizacion };

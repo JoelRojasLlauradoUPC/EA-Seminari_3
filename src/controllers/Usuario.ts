@@ -55,4 +55,15 @@ const deleteUsuario = async (req: Request, res: Response, next: NextFunction) =>
     }
 };
 
-export default { createUsuario, readUsuario, readAll, updateUsuario, deleteUsuario };
+const removeOrganization = async (req: Request, res: Response, next: NextFunction) => {
+    const usuarioId = req.params.usuarioId;
+
+    try {
+        const usuario = await UsuarioService.removeUsuarioOrganizacion(usuarioId);
+        return usuario ? res.status(200).json(usuario) : res.status(404).json({ message: 'not found' });
+    } catch (error) {
+        return res.status(500).json({ error });
+    }
+};
+
+export default { createUsuario, readUsuario, readAll, updateUsuario, deleteUsuario, removeOrganization };

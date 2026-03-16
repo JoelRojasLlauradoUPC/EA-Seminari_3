@@ -139,6 +139,27 @@ router.put('/:usuarioId', ValidateJoi(Schemas.usuario.update), controller.update
 
 /**
  * @openapi
+ * /usuarios/removeOrganization/{usuarioId}:
+ *   put:
+ *     summary: Desasigna la organización de un usuario (organizacion = null)
+ *     tags: [Usuarios]
+ *     parameters:
+ *       - in: path
+ *         name: usuarioId
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: ObjectId del usuario
+ *     responses:
+ *       200:
+ *         description: Usuario actualizado
+ *       404:
+ *         description: No encontrado
+ */
+router.put('/removeOrganization/:usuarioId', controller.removeOrganization);
+
+/**
+ * @openapi
  * /usuarios/{usuarioId}:
  *   delete:
  *     summary: Elimina un usuario por ID
